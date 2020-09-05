@@ -1,0 +1,12 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+  name: config-management
+spec:
+  # clusterName is required and must be unique among all managed clusters
+  clusterName: gke-london
+  git:
+    syncRepo: https://github.com/thomasdevos99/anthos-config
+    syncBranch: master
+    secretType: none
+    policyDir: foo-corp
